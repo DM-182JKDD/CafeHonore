@@ -1,22 +1,15 @@
 # Café Honoré · Angular 22
 
-## Cambios realizados
+Portal web de Café Honoré y +PLUS, desarrollado con Angular 22. Conserva el contenido, las imágenes y los formularios del sitio original, con diseño adaptable a móviles y escritorio. En móviles, la navegación principal se muestra fija en la parte inferior.
 
-- Aplicación independiente con Angular 22 y Node 24.
-- Separación de la lógica de navegación, integración HTTP, formularios y contenido.
-- Conservación de los textos, listas, tarjetas, direcciones, teléfonos, imágenes y campos originales.
-- Presentación adaptable a móviles y temas claro/oscuro con preferencia guardada.
-- Carrusel automático con pausa, controles y soporte de movimiento reducido.
-- Comprobación de integridad del contenido antes de compilar.
-
-Esta carpeta contiene todo lo necesario para ejecutar y compilar la aplicación. No depende de las carpetas del portal histórico o de las referencias de diseño.
+El portal público funciona sin un backend. El inicio de sesión y el envío del formulario de contacto requieren configurar una API; consulta [docs/API.md](docs/API.md).
 
 ## Requisitos
 
-- Node **24.x**, mínimo **24.15.0**; `.nvmrc` fija **24.22.1**.
-- npm, incluido con Node.
+- Node.js **24.x** (mínimo **24.15.0**); `.nvmrc` especifica **24.22.1**.
+- npm, incluido con Node.js.
 
-Si usas nvm para Windows:
+En Windows con nvm:
 
 ```powershell
 nvm install 24.22.1
@@ -24,25 +17,24 @@ nvm use 24.22.1
 node --version
 ```
 
-## Ejecutar desde la terminal de VS Code
+## Instalación y desarrollo
 
-Desde la raíz del espacio de trabajo:
+Desde la raíz del repositorio, abre una terminal y ejecuta:
 
 ```powershell
-cd ".\DEBITO\LEALTAD\HN_Cafehonore\angular-portal"
 npm.cmd ci
 npm.cmd start
 ```
 
-Si abriste directamente esta carpeta en VS Code, omite el comando `cd`. Abre `http://127.0.0.1:4200`. Angular recompila los cambios automáticamente. Detener con `Ctrl + C`.
+Abre `http://127.0.0.1:4200`. Angular recompila la aplicación al guardar cambios. Para detener el servidor, pulsa `Ctrl + C`.
 
-Para utilizar otro puerto:
+Para usar otro puerto:
 
 ```powershell
 npm.cmd start -- --port 4201
 ```
 
-## Comprobar y compilar
+## Verificación y compilación
 
 ```powershell
 npm.cmd run verify:content
@@ -50,19 +42,20 @@ npm.cmd test
 npm.cmd run build
 ```
 
-La compilación se genera en `dist/portal/browser/`. `npm.cmd run build` comprueba primero que los datos coincidan con la referencia de contenido incluida en `tools/content-baseline.json`.
+`npm.cmd run build` ejecuta primero la verificación del contenido. Esta compara textos, listas, títulos, imágenes y campos de formulario con la referencia en `tools/content-baseline.json`, y comprueba que las imágenes existan. La compilación de producción se genera en `dist/portal/browser/`.
 
-## Archivos de la aplicación
+## Estructura principal
 
 | Ubicación | Uso |
 | --- | --- |
-| `src/main.ts` | Inicio de Angular y rutas |
-| `src/portal/` | Componentes, formularios, servicios, contenido y pruebas |
-| `src/styles.css` | Diseño y temas |
-| `public/assets/` | Imágenes locales |
+| `src/main.ts` | Inicio de Angular y configuración de rutas |
+| `src/portal/` | Componentes, páginas, formularios, servicio HTTP y pruebas |
+| `src/tokens.css` | Variables de diseño |
+| `src/styles.css` | Estilos globales y adaptaciones por tamaño de pantalla |
+| `public/assets/` | Imágenes utilizadas por el portal |
 | `public/config.json` | Configuración pública de la API |
-| `angular.json` | Configuración de desarrollo y compilación |
-| `tsconfig*.json` | Configuración TypeScript |
-| `package.json`, `package-lock.json` | Comandos y dependencias reproducibles |
-
-El contenido público funciona sin API. Inicio de sesión y envío de contacto requieren conectar el backend; instrucciones en [docs/API.md](docs/API.md).
+| `docs/API.md` | Notas para integrar el backend |
+| `tools/content-baseline.json` | Referencia para verificar el contenido conservado |
+| `tools/verify-original-content.mjs` | Verificación ejecutada antes de compilar |
+| `angular.json`, `tsconfig*.json` | Configuración de Angular y TypeScript |
+| `package.json`, `package-lock.json` | Scripts y dependencias reproducibles |
