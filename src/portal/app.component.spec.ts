@@ -11,7 +11,7 @@ describe('Navegación y apariencia del portal', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const links = Array.from(fixture.nativeElement.querySelectorAll('.nav-links a')) as HTMLAnchorElement[];
-    expect(links.map(link => link.textContent?.trim())).toEqual(['Inicio', 'Acerca de', 'Politicas', 'Condiciones', 'Establecimientos', 'Mi Cuenta', 'Contáctenos']);
+    expect(links.map(link => link.textContent?.trim())).toEqual(['Inicio', 'Acerca de', 'Políticas', 'Condiciones', 'Establecimientos', 'Mi Cuenta', 'Contáctenos']);
   });
 
   it('usa una única apariencia y no presenta un control para cambiarla', () => {

@@ -26,7 +26,7 @@ export class PageComponent {
     { image: 'Slide2.jpg', name: 'Marco Aldany', url: 'http://marcoaldany.hn/' },
     { image: 'Slide3.jpg', name: 'Flores y Canastas Honoré', url: 'http://floreshonore.hn/' }
   ];
-  readonly titles: Record<string, string> = { acerca: 'Acerca de', politicas: 'Politicas', condiciones: 'Condiciones', establecimientos: 'Establecimientos', cuenta: 'Mi Cuenta', contacto: 'Contáctenos' };
+  readonly titles: Record<string, string> = { acerca: 'Acerca de', politicas: 'Políticas', condiciones: 'Condiciones', establecimientos: 'Establecimientos', cuenta: 'Mi Cuenta', contacto: 'Contáctenos' };
   private controlsFadeTimer: number | undefined;
   readonly loginForm = new FormGroup({
     username: new FormControl('', { nonNullable: true, validators: [Validators.required, Validators.maxLength(48)] }),

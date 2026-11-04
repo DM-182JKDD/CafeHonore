@@ -4,7 +4,7 @@
       <aside class="home-intro">
         <span class="eyebrow">Nuestras marcas</span>
         <h1>{{ slides[slide()].name }}</h1>
-        <a class="button" [href]="slides[slide()].url" target="_blank" rel="noopener noreferrer">Visitanos <span aria-hidden="true">↗</span></a>
+        <a class="button" [href]="slides[slide()].url" target="_blank" rel="noopener noreferrer">Visítanos <span aria-hidden="true">↗</span></a>
         <span class="stage-index" aria-hidden="true">0{{ slide() + 1 }} <span>/ 03</span></span>
       </aside>
       <section class="carousel" aria-label="Nuestras marcas" aria-roledescription="carrusel">
@@ -28,13 +28,13 @@
         @if (account(); as user) {
           <h2>{{ user.name }}</h2><p class="points"><strong>{{ user.points }}</strong> puntos</p><button class="button" type="button" (click)="logout()" [disabled]="busy()">Cerrar sesión</button>
         } @else {
-          <h2>Por favor Regístrate</h2>
+          <h2>Por favor, inicia sesión</h2>
           <form id="formdata" [formGroup]="loginForm" (ngSubmit)="login()" [attr.aria-busy]="busy()">
             <fieldset [disabled]="busy()">
               <label for="c1" class="sr-only">Nombre de Usuario</label><input id="c1" name="c1" formControlName="username" placeholder="Nombre de Usuario" autocomplete="username" maxlength="48" required [attr.aria-invalid]="loginForm.controls.username.invalid && loginForm.controls.username.touched ? 'true' : null" [attr.aria-describedby]="loginForm.controls.username.invalid && loginForm.controls.username.touched ? 'login-username-error' : null">
-              <small id="login-username-error" class="field-error">@if (loginForm.controls.username.touched && loginForm.controls.username.invalid) { El campo Nombre de Usuario no puede esta vacio }</small>
+              <small id="login-username-error" class="field-error">@if (loginForm.controls.username.touched && loginForm.controls.username.invalid) { El nombre de usuario no puede estar vacío. }</small>
               <label for="c2" class="sr-only">Contraseña</label><input id="c2" name="c2" type="password" formControlName="password" placeholder="Contraseña" autocomplete="current-password" maxlength="17" required [attr.aria-invalid]="loginForm.controls.password.invalid && loginForm.controls.password.touched ? 'true' : null" [attr.aria-describedby]="loginForm.controls.password.invalid && loginForm.controls.password.touched ? 'login-password-error' : null">
-              <small id="login-password-error" class="field-error">@if (loginForm.controls.password.touched && loginForm.controls.password.invalid) { El campo Contraseña no puede estar vacio. }</small>
+              <small id="login-password-error" class="field-error">@if (loginForm.controls.password.touched && loginForm.controls.password.invalid) { El campo de contraseña no puede estar vacío. }</small>
               <input type="hidden" id="c3" name="c3" value="1">
               <label class="remember"><input type="checkbox" formControlName="rememberPassword" value="remenber-me">Recordar contraseña</label>
               <button class="button full" type="submit" [disabled]="!api.ready() || busy()">{{ busy() ? 'Cargando...' : 'Enviar' }}</button>
@@ -54,9 +54,9 @@
           <small id="contact-last-name-error" class="field-error">@if (contactForm.controls.lastName.touched && contactForm.controls.lastName.invalid) { Completa este campo. }</small>
           <label for="c3">Teléfono</label><input id="c3" name="c3" type="tel" formControlName="phone" autocomplete="tel" maxlength="8" title="Ejemplo de formato: 22224444">
           <small id="contact-phone-error" class="field-error"></small>
-          <label for="c4">*E-Mail</label><input id="c4" name="c4" type="email" formControlName="email" autocomplete="email" maxlength="50" title="Ejemplo de formáto: correo@correo.com" required [attr.aria-invalid]="contactForm.controls.email.invalid && contactForm.controls.email.touched ? 'true' : null" [attr.aria-describedby]="contactForm.controls.email.invalid && contactForm.controls.email.touched ? 'contact-email-error' : null">
+          <label for="c4">*Correo electrónico</label><input id="c4" name="c4" type="email" formControlName="email" autocomplete="email" maxlength="50" title="Ejemplo de formato: correo@correo.com" required [attr.aria-invalid]="contactForm.controls.email.invalid && contactForm.controls.email.touched ? 'true' : null" [attr.aria-describedby]="contactForm.controls.email.invalid && contactForm.controls.email.touched ? 'contact-email-error' : null">
           <small id="contact-email-error" class="field-error">@if (contactForm.controls.email.touched && contactForm.controls.email.invalid) { Ingresa un correo válido. }</small>
-          <label for="c5">*No. Tarjeta Cliente</label><input id="c5" name="c5" formControlName="cardNumber" maxlength="16" required [attr.aria-invalid]="contactForm.controls.cardNumber.invalid && contactForm.controls.cardNumber.touched ? 'true' : null" [attr.aria-describedby]="contactForm.controls.cardNumber.invalid && contactForm.controls.cardNumber.touched ? 'contact-card-error' : null">
+          <label for="c5">*N.º de tarjeta de cliente</label><input id="c5" name="c5" formControlName="cardNumber" maxlength="16" required [attr.aria-invalid]="contactForm.controls.cardNumber.invalid && contactForm.controls.cardNumber.touched ? 'true' : null" [attr.aria-describedby]="contactForm.controls.cardNumber.invalid && contactForm.controls.cardNumber.touched ? 'contact-card-error' : null">
           <small id="contact-card-error" class="field-error">@if (contactForm.controls.cardNumber.touched && contactForm.controls.cardNumber.invalid) { Completa este campo. }</small>
           <label for="c6">*Mensaje</label><textarea id="c6" name="c6" formControlName="message" rows="5" maxlength="150" required [attr.aria-invalid]="contactForm.controls.message.invalid && contactForm.controls.message.touched ? 'true' : null" [attr.aria-describedby]="contactForm.controls.message.invalid && contactForm.controls.message.touched ? 'contact-message-error' : null"></textarea>
           <small id="contact-message-error" class="field-error">@if (contactForm.controls.message.touched && contactForm.controls.message.invalid) { Completa este campo. }</small>
@@ -69,4 +69,3 @@
     @default { <app-original-section [page]="page()" /> }
   }
 }
-
