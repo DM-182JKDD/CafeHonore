@@ -4,9 +4,9 @@
       "section": "acerca",
       "texts": {
         "p": [
-          "Café Honoré fue abierto al público en al año de 1,993 con el deseo de ofrecer una amplia gama de servicios a toda nuestra exclusiva clientela. Nos respaldan 23 años de experiencia en el mercado ofreciendo la mejor calidad en nuestros productos con un principio de mejora continua y atención especializada. Café Honoré es un excelente lugar para pasar un rato agradable con familia o amigos, en un ambiente seguro, urbano y moderno",
-          "Somos un Salón de Belleza en Tegucigalpa, mienbro de la cadena internacional Marco Aldany, reconocida a nivel mundial. Ofrecemos los servicios de Sala de Belleza y Spa, Cabina de Estética y Maquillaje.",
-          "Flores y Canastas Honoré ofrece arreglos florales para toda ocasión cumpleaños, graduaciones, aniversarios, días especiales o simplemente quieres dar un detalle. Nuestra amplia variedad de diversos diseños de arreglos florales para toda ocasión nos han caracterizado como una floristería de excelencia."
+          "Café Honoré fue abierto al público en el año 1993 con el deseo de ofrecer una amplia gama de servicios a toda nuestra exclusiva clientela. Nos respaldan 23 años de experiencia en el mercado ofreciendo la mejor calidad en nuestros productos con un principio de mejora continua y atención especializada. Café Honoré es un excelente lugar para pasar un rato agradable con la familia o con amigos, en un ambiente seguro, urbano y moderno.",
+          "Somos un salón de belleza en Tegucigalpa y formamos parte de la cadena internacional Marco Aldany, reconocida a nivel mundial. Ofrecemos servicios de salón de belleza, spa, estética y maquillaje.",
+          "Flores y Canastas Honoré ofrece arreglos florales para toda ocasión: cumpleaños, graduaciones, aniversarios y días especiales, o simplemente para dar un detalle. Nuestra amplia variedad de diseños para toda ocasión nos ha caracterizado como una floristería de excelencia."
         ],
         "ol li": [],
         "ul:not(.nav-tabs) > li": [],
@@ -28,25 +28,25 @@
       "section": "politicas",
       "texts": {
         "p": [
-          "Politicas"
+          "Políticas"
         ],
         "ol li": [
-          "Las tarjetas de regalo (Gift Card) son tarjetas prepagadas al portador que los clientes pueden adquirir en los puntos de venta de Café Honoré, Flores y Canastas Honoré y/o Marco Aldany por ende el cliente que las adquiere entiende que es el único responsable de su uso desde el momento de la compra, por lo tanto no nos hacemos responsables por tarjetas extraviadas, robadas o dañadas, no se aceptará queja o reclamo alguno ni se repondrá ni compensara de ninguna forma al cliente",
-          "Monto mínimo de carga será de L.500.00 con un monto máximo ilimitado y podrán ser consumidos en comercios afiliados como ser Café Honoré, Flores y Canastas Honoré y/o Marco Aldany.",
-          "Las tarjetas de regalo pueden usarse como tarjetas recargables una vez que el saldo de esta se agote. Esta recarga se podrá realizar en cualquiera de los comercios afiliados.",
-          "Al recargar sus tarjetas obtendrá, Café Honoré un capuchino, Flores y Canastas Honoré una rosa decorada y/o Marco Aldany un pintado de uñas (manos). Para consumir el mismo día.",
-          "Las tarjetas de regalo podrán ser utilizadas las veces que se requiera en cualquiera de los comercios afiliados hasta gastar su saldo dentro de los 3 años de vencimiento.",
-          "En caso de hacer una recarga en cualquiera de los comercios afiliados su saldo anterior en el caso que exista se actualizara y a partir de la fecha corren los 3 años de vencimiento.",
-          "Las tarjetas de regalo no se cambiarán en efectivo y no sirven para acumulación de puntos únicamente podrán ser recargadas.",
-          "En caso de robo o pérdida las tarjetas de regalo no se reemplazan, los saldos sobrantes o remanentes al vencimiento de la tarjeta de regalo, serán propiedad de los comercios afiliados Café Honoré, Flores y Canastas Honoré y/0 Marco Aldany.",
-          "Para conocer el saldo en sus tarjetas de regalo se puede abocar a las instalaciones de los comercios afiliados a Café Honoré, Flores y Canastas Honoré y/o Marco Aldany.",
+          "Las tarjetas de regalo (Gift Card) son tarjetas prepagadas al portador que pueden adquirirse en los puntos de venta de Café Honoré, Flores y Canastas Honoré o Marco Aldany. El cliente que las adquiere es el único responsable de su uso desde el momento de la compra. No nos hacemos responsables por tarjetas extraviadas, robadas o dañadas; no se aceptarán quejas ni reclamos, ni se repondrá ni compensará la tarjeta de ninguna forma.",
+          "El monto mínimo de carga es de L 500.00, sin límite máximo. Las tarjetas podrán utilizarse en los comercios afiliados: Café Honoré, Flores y Canastas Honoré o Marco Aldany.",
+          "Las tarjetas de regalo pueden recargarse una vez agotado su saldo. La recarga se puede realizar en cualquiera de los comercios afiliados.",
+          "Al recargar su tarjeta, recibirá un obsequio: un capuchino en Café Honoré, una rosa decorada en Flores y Canastas Honoré o un servicio de pintado de uñas (manos) en Marco Aldany. El obsequio deberá consumirse el mismo día.",
+          "Las tarjetas de regalo pueden utilizarse las veces que sea necesario en cualquiera de los comercios afiliados, hasta agotar su saldo durante los tres años de vigencia.",
+          "Al recargar la tarjeta en cualquiera de los comercios afiliados, el saldo existente se actualizará y, a partir de esa fecha, comenzará un nuevo plazo de tres años de vigencia.",
+          "Las tarjetas de regalo no se pueden cambiar por efectivo ni sirven para acumular puntos; únicamente se pueden recargar.",
+          "En caso de robo o pérdida, las tarjetas de regalo no se reemplazan. Los saldos sobrantes al vencimiento de la tarjeta serán propiedad de los comercios afiliados: Café Honoré, Flores y Canastas Honoré o Marco Aldany.",
+          "Para conocer el saldo de su tarjeta de regalo, puede acudir a cualquiera de los comercios afiliados: Café Honoré, Flores y Canastas Honoré o Marco Aldany.",
           "Nos reservamos el derecho de modificar dichos términos."
         ],
         "ul:not(.nav-tabs) > li": [],
         ".h1": [],
         ".h2": [
-          "Politicas Gift Card",
-          "Politicas GiftCard"
+          "Políticas Gift Card",
+          "Políticas Gift Card"
         ],
         "h5": []
       },
@@ -60,25 +60,25 @@
       "section": "politicas-gift",
       "texts": {
         "p": [
-          "Politicas"
+          "Políticas"
         ],
         "ol li": [
-          "Las tarjetas de regalo (Gift Card) son tarjetas prepagadas al portador que los clientes pueden adquirir en los puntos de venta de Café Honoré, Flores y Canastas Honoré y/o Marco Aldany por ende el cliente que las adquiere entiende que es el único responsable de su uso desde el momento de la compra, por lo tanto no nos hacemos responsables por tarjetas extraviadas, robadas o dañadas, no se aceptará queja o reclamo alguno ni se repondrá ni compensara de ninguna forma al cliente",
-          "Monto mínimo de carga será de L.500.00 con un monto máximo ilimitado y podrán ser consumidos en comercios afiliados como ser Café Honoré, Flores y Canastas Honoré y/o Marco Aldany.",
-          "Las tarjetas de regalo pueden usarse como tarjetas recargables una vez que el saldo de esta se agote. Esta recarga se podrá realizar en cualquiera de los comercios afiliados.",
-          "Al recargar sus tarjetas obtendrá, Café Honoré un capuchino, Flores y Canastas Honoré una rosa decorada y/o Marco Aldany un pintado de uñas (manos). Para consumir el mismo día.",
-          "Las tarjetas de regalo podrán ser utilizadas las veces que se requiera en cualquiera de los comercios afiliados hasta gastar su saldo dentro de los 3 años de vencimiento.",
-          "En caso de hacer una recarga en cualquiera de los comercios afiliados su saldo anterior en el caso que exista se actualizara y a partir de la fecha corren los 3 años de vencimiento.",
-          "Las tarjetas de regalo no se cambiarán en efectivo y no sirven para acumulación de puntos únicamente podrán ser recargadas.",
-          "En caso de robo o pérdida las tarjetas de regalo no se reemplazan, los saldos sobrantes o remanentes al vencimiento de la tarjeta de regalo, serán propiedad de los comercios afiliados Café Honoré, Flores y Canastas Honoré y/0 Marco Aldany.",
-          "Para conocer el saldo en sus tarjetas de regalo se puede abocar a las instalaciones de los comercios afiliados a Café Honoré, Flores y Canastas Honoré y/o Marco Aldany.",
+          "Las tarjetas de regalo (Gift Card) son tarjetas prepagadas al portador que pueden adquirirse en los puntos de venta de Café Honoré, Flores y Canastas Honoré o Marco Aldany. El cliente que las adquiere es el único responsable de su uso desde el momento de la compra. No nos hacemos responsables por tarjetas extraviadas, robadas o dañadas; no se aceptarán quejas ni reclamos, ni se repondrá ni compensará la tarjeta de ninguna forma.",
+          "El monto mínimo de carga es de L 500.00, sin límite máximo. Las tarjetas podrán utilizarse en los comercios afiliados: Café Honoré, Flores y Canastas Honoré o Marco Aldany.",
+          "Las tarjetas de regalo pueden recargarse una vez agotado su saldo. La recarga se puede realizar en cualquiera de los comercios afiliados.",
+          "Al recargar su tarjeta, recibirá un obsequio: un capuchino en Café Honoré, una rosa decorada en Flores y Canastas Honoré o un servicio de pintado de uñas (manos) en Marco Aldany. El obsequio deberá consumirse el mismo día.",
+          "Las tarjetas de regalo pueden utilizarse las veces que sea necesario en cualquiera de los comercios afiliados, hasta agotar su saldo durante los tres años de vigencia.",
+          "Al recargar la tarjeta en cualquiera de los comercios afiliados, el saldo existente se actualizará y, a partir de esa fecha, comenzará un nuevo plazo de tres años de vigencia.",
+          "Las tarjetas de regalo no se pueden cambiar por efectivo ni sirven para acumular puntos; únicamente se pueden recargar.",
+          "En caso de robo o pérdida, las tarjetas de regalo no se reemplazan. Los saldos sobrantes al vencimiento de la tarjeta serán propiedad de los comercios afiliados: Café Honoré, Flores y Canastas Honoré o Marco Aldany.",
+          "Para conocer el saldo de su tarjeta de regalo, puede acudir a cualquiera de los comercios afiliados: Café Honoré, Flores y Canastas Honoré o Marco Aldany.",
           "Nos reservamos el derecho de modificar dichos términos."
         ],
         "ul:not(.nav-tabs) > li": [],
         ".h1": [],
         ".h2": [
-          "Politicas Gift Card",
-          "Politicas Gift Card"
+          "Políticas Gift Card",
+          "Políticas Gift Card"
         ],
         "h5": []
       },
@@ -92,26 +92,26 @@
       "section": "politicas-plus",
       "texts": {
         "p": [
-          "Politicas"
+          "Políticas"
         ],
         "ol li": [
-          "El cliente acumula un punto por cada dólar consumido en Café Honore, Flores y Canastas Honoré y/o Marco Aldany con un consumo mayor de L.500.00 por primera vez.",
-          "Participan los clientes de Café Honore, Flores y Canastas Honore y/o Marco Aldany los puntos podrán ser canjeados en cualquiera de los 3 comercios.",
-          "Después de 3 años de inactividad de la tarjeta, los puntos acumulados se perderán en Café Honoré, Flores y Canastas Honoré y/o Marco Aldany.",
-          "Los puntos acumulados no son transferibles ni canjeables por efectivo tanto para Café Honoré, Flores y Canastas Honoré y/o Marco Aldany.",
-          "El cliente deberá notificar a Café Honoré, Flores y Canastas Honoré y/o Marco Aldany en caso de pérdida o extravió de su tarjeta para reemplazar la misma con un valor de L.50.00 y asignar el bolsón de puntos acumulados a su nueva tarjeta.",
-          "En caso de que el Cliente, por cualquier causa, dejase de ser miembro del programa PLUS, los puntos vigentes acumulados y no utilizados a dicha fecha serán anulados.",
-          "Café Honoré, Flores y Canastas Honoré y/o Marco Aldany se reserva el derecho de, en cualquier momento y sin previo aviso, cambiar o modificar los términos de acumulación y redención de puntos.",
-          "Una vez los puntos sean redimidos no se podrán devolver, reemplazar, rembolsar, reinstalar, cambiar por efectivo o por puntos tanto para Café Honoré, Flores y Canastas Honoré y/o Marco Aldany.",
-          "El Cliente puede redimir sus puntos acumulados en cualquier momento, siempre y cuando tenga activa su tarjeta ya sea de Café Honoré, Flores y Canastas Honoré y/o Marco Aldany. Tomar en cuenta el numeral 3.",
-          "Restricciones aplican en caso de acumulación de puntos para Café Honoré, no aplica en promociones, no aplica en canastas gourmet. Aplica en eventos con monto de consumo hasta L.25,000.00.",
-          "Restricciones aplican en caso de acumulación de puntos para Flores y Canastas Honoré, aplica en eventos con monto de consumo hasta L.25,000.00.",
-          "Restricciones aplican en caso de acumulación de puntos para Marco Aldany, no aplica en promociones, ni paquetes especiales."
+          "El cliente acumula un punto por cada dólar consumido en Café Honoré, Flores y Canastas Honoré o Marco Aldany, siempre que su primera compra supere los L 500.00.",
+          "Pueden participar los clientes de Café Honoré, Flores y Canastas Honoré o Marco Aldany. Los puntos pueden canjearse en cualquiera de los tres comercios.",
+          "Si la tarjeta permanece inactiva durante tres años, se perderán los puntos acumulados en Café Honoré, Flores y Canastas Honoré o Marco Aldany.",
+          "Los puntos acumulados no son transferibles ni canjeables por efectivo en Café Honoré, Flores y Canastas Honoré o Marco Aldany.",
+          "En caso de pérdida o extravío de la tarjeta, el cliente deberá notificar a Café Honoré, Flores y Canastas Honoré o Marco Aldany. Se reemplazará la tarjeta por un valor de L 50.00 y se transferirá el saldo de puntos acumulados a la nueva tarjeta.",
+          "Si el cliente deja de ser miembro del programa PLUS por cualquier causa, se anularán los puntos acumulados que estén vigentes y no se hayan utilizado hasta esa fecha.",
+          "Café Honoré, Flores y Canastas Honoré o Marco Aldany se reservan el derecho de cambiar, en cualquier momento y sin previo aviso, los términos de acumulación y canje de puntos.",
+          "Una vez canjeados los puntos no podrán devolverse, reemplazarse, reembolsarse, restituirse ni cambiarse por efectivo o por otros puntos en Café Honoré, Flores y Canastas Honoré o Marco Aldany.",
+          "El cliente puede canjear sus puntos acumulados en cualquier momento, siempre que mantenga activa su tarjeta de Café Honoré, Flores y Canastas Honoré o Marco Aldany. Tenga en cuenta el numeral 3.",
+          "En Café Honoré, la acumulación de puntos no aplica a promociones ni a canastas gourmet. En eventos, aplica para consumos de hasta L 25,000.00.",
+          "En Flores y Canastas Honoré, la acumulación de puntos aplica en eventos con consumos de hasta L 25,000.00.",
+          "En Marco Aldany, la acumulación de puntos no aplica a promociones ni a paquetes especiales."
         ],
         "ul:not(.nav-tabs) > li": [],
         ".h1": [],
         ".h2": [
-          "Politicas Plus Card"
+          "Políticas Plus Card"
         ],
         "h5": []
       },
@@ -125,23 +125,23 @@
       "section": "politicas-corporativa",
       "texts": {
         "p": [
-          "Politicas"
+          "Políticas"
         ],
         "ol li": [
-          "El cliente acumula un punto por cada dólar consumido en Café Honore con un consumo mayor de L.500.00 por primera vez.",
-          "Después de 3 años de inactividad de la tarjeta, los puntos acumulados se perderán en Café Honoré.",
+          "El cliente acumula un punto por cada dólar consumido en Café Honoré, siempre que su primera compra supere los L 500.00.",
+          "Si la tarjeta permanece inactiva durante tres años, se perderán los puntos acumulados en Café Honoré.",
           "Los puntos acumulados no son transferibles ni canjeables por efectivo en Café Honoré.",
-          "El cliente deberá notificar a Café Honoré en caso de pérdida o extravió de su tarjeta para reemplazar la misma con un valor de L.50.00 y asignar el bolsón de puntos acumulados a su nueva tarjeta.",
-          "En caso de que el Cliente, por cualquier causa, dejase de ser miembro del programa CORPORATIVO, los puntos vigentes acumulados y no utilizados a dicha fecha serán anulados.",
-          "Café Honoré se reserva el derecho de, en cualquier momento y sin previo aviso, cambiar o modificar los términos de acumulación y redención de puntos.",
-          "Una vez los puntos sean redimidos no se podrán devolver, reemplazar, rembolsar, reinstalar, cambiar por efectivo o por puntos en Café Honoré.",
-          "El Cliente puede redimir sus puntos acumulados en cualquier momento, siempre y cuando tenga activa su tarjeta de Café Honoré - CORPORATIVO. Tomar en cuenta el numeral 2.",
-          "Restricciones aplican en caso de acumulación de puntos para Café Honoré - CORPORATIVO, no aplica en promociones, no aplica en canastas gourmet. Aplica en eventos o pedidos a domicilio con monto de consumo hasta L.35,000.00."
+          "En caso de pérdida o extravío de la tarjeta, el cliente deberá notificar a Café Honoré. Se reemplazará la tarjeta por un valor de L 50.00 y se transferirá el saldo de puntos acumulados a la nueva tarjeta.",
+          "Si el cliente deja de ser miembro del programa CORPORATIVO por cualquier causa, se anularán los puntos acumulados que estén vigentes y no se hayan utilizado hasta esa fecha.",
+          "Café Honoré se reserva el derecho de cambiar, en cualquier momento y sin previo aviso, los términos de acumulación y canje de puntos.",
+          "Una vez canjeados los puntos no podrán devolverse, reemplazarse, reembolsarse, restituirse ni cambiarse por efectivo o por otros puntos en Café Honoré.",
+          "El cliente puede canjear sus puntos acumulados en cualquier momento, siempre que mantenga activa su tarjeta de Café Honoré - CORPORATIVO. Tenga en cuenta el numeral 2.",
+          "En Café Honoré - CORPORATIVO, la acumulación de puntos no aplica a promociones ni a canastas gourmet. En eventos o pedidos a domicilio, aplica para consumos de hasta L 35,000.00."
         ],
         "ul:not(.nav-tabs) > li": [],
         ".h1": [],
         ".h2": [
-          "Politicas Corporativa"
+          "Políticas Corporativa"
         ],
         "h5": []
       },
@@ -160,11 +160,11 @@
         ],
         "ol li": [],
         "ul:not(.nav-tabs) > li": [
-          "Presentarla cada vez que desee consumir el saldo contenido en esta tarjeta, es de uso transferible y puede ser utilizada como tarjeta recargable. El saldo contenido en esta tarjeta podrá ser utilizado en Café Honoré, Flores y Canastas Honoré y Marco Aldany. No nos hacemos responsables por pérdida ni extravió de esta tarjeta. *Restricciones aplica.",
-          "Es de uso personal e intransferible. Presentarla cada vez que realice su consumo para acumular puntos y obtener beneficios en Café Honoré y comercios afiliados como Marco Aldany y Flores y Canastas Honoré. En caso de pérdida deberá presentarse en Café Honoré para poder hacer la reposición. Para más información visite www.cafeHonore.hn *Restricciones aplican.",
-          "Es de uso personal e intransferible. Presentarla cada vez que realice su consumo para acumular puntos y obtener beneficios en Marco Aldany y comercios afiliados como Café Honoré y Flores y Canastas Honoré. En caso de pérdida deberá presentarse en Marco Aldany para poder hacer la reposición. Para más información visite www.marcoaldany.hn *Restricciones aplican.",
-          "Es de uso personal e intransferible. Presentarla cada vez que realice su consumo para acumular puntos y obtener beneficios en Flores y Canastas Honoré y comercios afiliados como Café Honoré y Marco Aldany. En caso de pérdida deberá presentarse en Flores y Canastas Honoré para poder hacer la reposición. Para más información visite www.floreshonore.hn *Restricciones aplican.",
-          "Es de uso personal e intransferible. Presentarla cada vez que realice su consumo para acumular puntos y obtener beneficios en Café Honoré. En caso de pérdida deberá presentarse en Café Honoré para poder hacer la reposición. Para más información visite www.cafehonore.hn *Restricciones aplican."
+          "Preséntela cada vez que desee utilizar el saldo de esta tarjeta. Es transferible y puede recargarse. El saldo puede utilizarse en Café Honoré, Flores y Canastas Honoré o Marco Aldany. No nos hacemos responsables por la pérdida ni el extravío de esta tarjeta. *Se aplican restricciones.",
+          "Es de uso personal e intransferible. Preséntela cada vez que realice una compra para acumular puntos y obtener beneficios en Café Honoré y comercios afiliados como Marco Aldany y Flores y Canastas Honoré. En caso de pérdida, deberá acudir a Café Honoré para solicitar su reposición. Para más información, visite: www.cafeHonore.hn *Se aplican restricciones.",
+          "Es de uso personal e intransferible. Preséntela cada vez que realice una compra para acumular puntos y obtener beneficios en Marco Aldany y comercios afiliados como Café Honoré y Flores y Canastas Honoré. En caso de pérdida, deberá acudir a Marco Aldany para solicitar su reposición. Para más información, visite: www.marcoaldany.hn *Se aplican restricciones.",
+          "Es de uso personal e intransferible. Preséntela cada vez que realice una compra para acumular puntos y obtener beneficios en Flores y Canastas Honoré y comercios afiliados como Café Honoré y Marco Aldany. En caso de pérdida, deberá acudir a Flores y Canastas Honoré para solicitar su reposición. Para más información, visite: www.floreshonore.hn *Se aplican restricciones.",
+          "Es de uso personal e intransferible. Preséntela cada vez que realice una compra para acumular puntos y obtener beneficios en Café Honoré. En caso de pérdida, deberá acudir a Café Honoré para solicitar su reposición. Para más información, visite: www.cafehonore.hn *Se aplican restricciones."
         ],
         ".h1": [],
         ".h2": [
@@ -197,17 +197,17 @@
         ".h2": [],
         "h5": [
           "CAFÉ HONORÉ",
-          "Colonia Palmira, Avenida Republica de Argentina",
+          "Colonia Palmira, avenida República de Argentina",
           "",
           "Tel: 2239-7566/67",
           "FLORES Y CANASTAS HONORÉ",
-          "Colonia Palmira, Avenida Republica de Argentina",
+          "Colonia Palmira, avenida República de Argentina",
           "",
           "Tel: 2239-7568/69",
           "MARCO ALDANY",
-          "Centro Morazán, final boulevard Morazán Tel:2221-0689/0716",
+          "Centro Morazán, final del bulevar Morazán. Tel.: 2221-0689/0716",
           "",
-          "Torre Metrópolis , frente Emisoras Unidas Tel:2270-7042/44"
+          "Torre Metrópolis, frente a Emisoras Unidas. Tel.: 2270-7042/44"
         ]
       },
       "images": [
