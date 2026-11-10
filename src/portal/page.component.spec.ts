@@ -4,6 +4,7 @@ import { signal } from '@angular/core';
 import { of } from 'rxjs';
 import { vi } from 'vitest';
 import { ApiService } from './api.service';
+import { AppComponent } from './app.component';
 import { PageComponent } from './page.component';
 
 describe('Carrusel automático', () => {
@@ -60,15 +61,17 @@ describe('Carrusel automático', () => {
 
 describe('Vistas autenticadas de Mi Cuenta', () => {
   let apiLogout: ReturnType<typeof vi.fn>;
+  let apiLogin: ReturnType<typeof vi.fn>;
   beforeEach(() => {
     apiLogout = vi.fn();
+    apiLogin = vi.fn();
     vi.stubGlobal('matchMedia', () => ({ matches: true, addEventListener: vi.fn(), removeEventListener: vi.fn() }));
     TestBed.configureTestingModule({
       imports: [PageComponent],
       providers: [
         provideRouter([]),
         { provide: ActivatedRoute, useValue: { data: of({ page: 'cuenta' }) } },
-        { provide: ApiService, useValue: { ready: signal(false), login: vi.fn(), logout: apiLogout } }
+        { provide: ApiService, useValue: { ready: signal(false), login: apiLogin, logout: apiLogout } }
       ]
     });
   });
@@ -121,11 +124,19 @@ describe('Vistas autenticadas de Mi Cuenta', () => {
     expect(fixture.nativeElement.textContent).toContain('Movimientos recientes');
   });
 
-  it('no ofrece acceso de demostración en la pantalla de inicio de sesión', () => {
+  it('inicia sesión y muestra el nombre en la barra superior', async () => {
     const fixture = TestBed.createComponent(PageComponent);
+    apiLogin.mockResolvedValue({ name: 'Miembro de prueba', points: 12 });
+    fixture.componentInstance.api.ready.set(true);
+    fixture.componentInstance.loginForm.setValue({ username: 'member', password: 'password', rememberPassword: false });
+    await fixture.componentInstance.login();
     fixture.detectChanges();
-    expect(fixture.nativeElement.querySelector('form#formdata')).not.toBeNull();
-    expect(fixture.nativeElement.querySelector('.demo-entry')).toBeNull();
+
+    const appFixture = TestBed.createComponent(AppComponent);
+    appFixture.detectChanges();
+    expect(appFixture.nativeElement.querySelector('.topbar a')?.textContent?.trim()).toBe('Miembro de prueba');
+    expect(appFixture.nativeElement.querySelector('.topbar')?.textContent).not.toContain('Iniciar sesión');
+    expect(fixture.nativeElement.querySelector('form#formdata')).toBeNull();
   });
 
   it('colapsa el menú de cuenta y lo cierra al elegir una sección', () => {
@@ -148,4 +159,5 @@ describe('Vistas autenticadas de Mi Cuenta', () => {
     expect(fixture.nativeElement.querySelector('.account-menu-backdrop')).toBeNull();
     expect(fixture.componentInstance.accountView()).toBe('movimientos');
   });
+
 });

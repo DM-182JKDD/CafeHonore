@@ -1,5 +1,5 @@
 <a class="skip-link" href="#contenido" (click)="$event.preventDefault(); content.focus()">Saltar al contenido</a>
-<div class="topbar"><div class="shell topbar-inner"><span>.:: Café Honoré ::. | 3.1.53 |</span><a routerLink="/cuenta">Iniciar sesión</a></div></div>
+<div class="topbar"><div class="shell topbar-inner"><span>.:: Café Honoré ::. | 3.1.53 |</span>@if (session.account(); as user) { <a routerLink="/cuenta" [attr.aria-label]="'Mi Cuenta: ' + user.name">{{ user.name }}</a> } @else { <a routerLink="/cuenta">Iniciar sesión</a> }</div></div>
 <header class="site-header">
   <div class="shell header-layout">
     <div class="brand-row">
@@ -24,5 +24,4 @@
 </header>
 <main id="contenido" class="shell main" tabindex="-1" #content><router-outlet /></main>
 <footer class="shell footer"><div><span>© SPlus;</span></div><img src="assets/img/DATACODE.png" alt="Datacode"></footer>
-
 

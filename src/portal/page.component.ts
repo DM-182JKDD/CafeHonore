@@ -3,7 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { HttpErrorResponse } from '@angular/common/http';
-import { ApiService, Account } from './api.service';
+import { ApiService } from './api.service';
+import { AccountSessionService } from './account-session.service';
 import { OriginalSectionComponent } from './original-section.component';
 
 type AccountView = 'inicio' | 'movimientos' | 'password' | 'perfil' | 'establecimientos' | 'premios';
@@ -11,6 +12,7 @@ type AccountView = 'inicio' | 'movimientos' | 'password' | 'perfil' | 'estableci
 @Component({ selector: 'app-page', imports: [ReactiveFormsModule, OriginalSectionComponent], templateUrl: './page.component.html' })
 export class PageComponent {
   readonly api = inject(ApiService);
+  private readonly accountSession = inject(AccountSessionService);
   private readonly route = inject(ActivatedRoute);
   private readonly destroyRef = inject(DestroyRef);
   readonly page = signal('inicio');
@@ -22,7 +24,7 @@ export class PageComponent {
   readonly controlsQuiet = signal(false);
   readonly busy = signal(false);
   readonly message = signal('');
-  readonly account = signal<Account | null>(null);
+  readonly account = this.accountSession.account;
   readonly accountView = signal<AccountView>('inicio');
   readonly accountMenuOpen = signal(false);
   readonly accountNavigation: readonly { id: AccountView; label: string }[] = [
@@ -98,14 +100,14 @@ export class PageComponent {
       const { username, password } = this.loginForm.getRawValue();
       const result = await this.api.login(username, password);
       if (typeof result.name !== 'string' || typeof result.points !== 'number') throw new Error('Respuesta inválida');
-      this.account.set(result); this.accountView.set('inicio'); this.loginForm.reset();
+      this.accountSession.setAccount(result); this.accountView.set('inicio'); this.loginForm.reset();
     } catch (error) { this.message.set(error instanceof HttpErrorResponse && error.status === 401 ? 'Usuario o contraseña incorrectos.' : 'No pudimos iniciar sesión. Inténtalo más tarde.'); }
     finally { this.busy.set(false); }
   }
   async logout(): Promise<void> {
     if (this.busy()) return;
     this.busy.set(true); this.message.set('');
-    try { await this.api.logout(); this.account.set(null); this.accountView.set('inicio'); this.accountMenuOpen.set(false); }
+    try { await this.api.logout(); this.accountSession.clear(); this.accountView.set('inicio'); this.accountMenuOpen.set(false); }
     catch { this.message.set('No pudimos cerrar la sesión. Inténtalo de nuevo.'); }
     finally { this.busy.set(false); }
   }
