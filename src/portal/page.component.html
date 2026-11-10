@@ -21,13 +21,112 @@
     <div class="carousel-bottom"><span class="sr-only" [attr.aria-live]="playing() ? 'off' : 'polite'">0{{ slide() + 1 }} de 03</span><div class="carousel-controls"><div class="dots" [class.quiet]="controlsQuiet()" aria-label="Seleccionar diapositiva">@for (item of slides; track item.image; let i = $index) { <button type="button" [class.selected]="slide() === i" [attr.aria-pressed]="slide() === i" [attr.aria-label]="'Mostrar ' + item.name" (click)="selectSlide(i)"></button> }</div><button class="play-toggle" type="button" (click)="playing.set(!playing())" [attr.aria-label]="playing() ? 'Pausar carrusel' : 'Reproducir carrusel'" [attr.aria-pressed]="playing()"><span aria-hidden="true">{{ playing() ? 'Ⅱ' : '▷' }}</span></button></div></div>
   </div>
 } @else {
-  <div class="page-heading"><h1>{{ titles[page()] }}</h1></div>
+  @if (page() !== 'cuenta') { <div class="page-heading"><h1>{{ titles[page()] }}</h1></div> }
   @switch (page()) {
     @case ('cuenta') {
-      <section class="panel original-login">
-        @if (account(); as user) {
-          <h2>{{ user.name }}</h2><p class="points"><strong>{{ user.points }}</strong> puntos</p><button class="button" type="button" (click)="logout()" [disabled]="busy()">Cerrar sesión</button>
-        } @else {
+      @if (account(); as user) {
+        <div class="account-layout">
+          <aside class="account-sidebar panel" [class.open]="accountMenuOpen()" aria-label="Secciones de la cuenta">
+            <button class="account-menu-close" type="button" (click)="toggleAccountMenu()" aria-label="Cerrar menú de cuenta">×</button>
+            <nav id="account-navigation" class="account-nav" aria-label="Menú de cuenta">
+              @for (item of accountNavigation; track item.id) {
+                <button class="account-nav-link" type="button" [class.active]="accountView() === item.id" [attr.aria-current]="accountView() === item.id ? 'page' : null" (click)="selectAccountView(item.id)">{{ item.label }}</button>
+              }
+              <button class="account-nav-link logout-link" type="button" (click)="logout()" [disabled]="busy()">Cerrar sesión</button>
+            </nav>
+          </aside>
+          @if (accountMenuOpen()) { <button class="account-menu-backdrop" type="button" (click)="toggleAccountMenu()" aria-label="Cerrar menú de cuenta"></button> }
+          <div class="account-main">
+            <button class="account-menu-toggle" type="button" (click)="toggleAccountMenu()" [attr.aria-expanded]="accountMenuOpen()" aria-controls="account-navigation">
+              <span aria-hidden="true">☰</span> Menú
+            </button>
+            @if (message()) { <p class="form-message account-message" role="status">{{ message() }}</p> }
+            <div class="account-balance panel">
+              <div><span class="eyebrow">Tu saldo disponible</span><h2>Puntos Honoré</h2></div>
+              <p><strong>{{ user.points }}</strong><span>puntos</span></p>
+            </div>
+            @if (accountView() === 'inicio') {
+              <section class="panel account-panel">
+                <div class="account-panel-heading"><div><span class="eyebrow">Resumen</span><h2>Hola, {{ user.name }}</h2></div></div>
+                <div class="account-detail-placeholder">
+                  <strong>Datos de tu cuenta</strong>@if (!demoMode()) { <p>El perfil completo se mostrará cuando esté disponible la conexión con el servicio de cuenta.</p> }
+                  <dl class="account-detail-list">
+                    <div><dt>Correo electrónico</dt><dd>{{ demoMode() ? 'demo@example.com' : 'No disponible' }}</dd></div>
+                    <div><dt>Teléfono</dt><dd>{{ demoMode() ? '+504 0000-0000' : 'No disponible' }}</dd></div>
+                    <div><dt>Teléfono móvil</dt><dd>{{ demoMode() ? '+504 0000-0000' : 'No disponible' }}</dd></div>
+                    <div><dt>Dirección</dt><dd>{{ demoMode() ? 'Dirección de demostración' : 'No disponible' }}</dd></div>
+                    <div><dt>Tarjeta</dt><dd>{{ demoMode() ? '•••• •••• •••• 0000' : 'No disponible' }}</dd></div>
+                  </dl>
+                </div>
+              </section>
+              <section class="panel account-panel">
+                <div class="account-panel-heading"><div><span class="eyebrow">Actividad</span><h2>Movimientos recientes</h2></div><button class="text-button" type="button" (click)="selectAccountView('movimientos')">Ver todos</button></div>
+                <div class="account-table-wrap"><table class="account-table"><thead><tr><th scope="col">Código</th><th scope="col">Establecimiento</th><th scope="col">Descripción</th><th scope="col">Fecha</th><th scope="col">Cargo</th><th scope="col">Abono</th><th scope="col">Saldo</th></tr></thead><tbody>
+                  @if (demoMode()) {
+                    @for (movement of demoMovements.slice(0, 3); track movement.code) { <tr><td>{{ movement.code }}</td><td>{{ movement.establishment }}</td><td>{{ movement.description }}</td><td>{{ movement.date }}</td><td>{{ movement.charge }}</td><td>{{ movement.credit }}</td><td>{{ movement.balance }}</td></tr> }
+                  } @else { <tr><td class="account-empty" colspan="7">Los movimientos estarán disponibles cuando se conecte el servicio de cuenta.</td></tr> }
+                </tbody></table></div>
+              </section>
+            } @else if (accountView() === 'movimientos') {
+              <section class="panel account-panel">
+                <div class="account-panel-heading"><div><span class="eyebrow">Actividad</span><h2>Movimientos de la cuenta</h2></div></div>
+                <fieldset class="account-filter" disabled>
+                  <label for="movement-from">Desde</label><input id="movement-from" type="date">
+                  <label for="movement-to">Hasta</label><input id="movement-to" type="date">
+                  <button class="button" type="button" disabled>Filtrar</button>
+                </fieldset>
+                @if (!demoMode()) { <p class="notice" role="status">El servicio de cuenta aún no proporciona movimientos para mostrar.</p> }
+                <div class="account-table-wrap"><table class="account-table"><thead><tr><th scope="col">Código</th><th scope="col">Establecimiento</th><th scope="col">Descripción</th><th scope="col">Fecha</th><th scope="col">Cargo</th><th scope="col">Abono</th><th scope="col">Saldo</th></tr></thead><tbody>
+                  @if (demoMode()) {
+                    @for (movement of demoMovements; track movement.code) { <tr><td>{{ movement.code }}</td><td>{{ movement.establishment }}</td><td>{{ movement.description }}</td><td>{{ movement.date }}</td><td>{{ movement.charge }}</td><td>{{ movement.credit }}</td><td>{{ movement.balance }}</td></tr> }
+                  } @else { <tr><td class="account-empty" colspan="7">No hay movimientos disponibles.</td></tr> }
+                </tbody></table></div>
+              </section>
+            } @else if (accountView() === 'password') {
+              <section class="panel account-panel">
+                <div class="account-panel-heading"><div><span class="eyebrow">Seguridad</span><h2>Cambiar contraseña</h2></div></div>
+                @if (!demoMode()) { <p class="notice">El cambio de contraseña estará disponible cuando se conecte el servicio de cuenta.</p> }
+                <fieldset class="account-form" disabled>
+                  <label for="current-password">Contraseña anterior</label><input id="current-password" type="password" autocomplete="current-password">
+                  <label for="new-password">Nueva contraseña</label><input id="new-password" type="password" autocomplete="new-password" placeholder="Nueva contraseña">
+                  <label for="confirm-password">Confirmar contraseña</label><input id="confirm-password" type="password" autocomplete="new-password" placeholder="Confirmación de contraseña">
+                  <button class="button" type="button" disabled>Guardar</button>
+                </fieldset>
+              </section>
+            } @else if (accountView() === 'perfil') {
+              <section class="panel account-panel">
+                <div class="account-panel-heading"><div><span class="eyebrow">Perfil</span><h2>Actualizar datos</h2></div></div>
+                @if (!demoMode()) { <p class="notice">La edición de datos estará disponible cuando se conecte el servicio de cuenta.</p> }
+                <fieldset class="account-form account-profile-form" disabled>
+                  <label for="profile-first-name">Nombre</label><input id="profile-first-name" autocomplete="given-name" [value]="demoMode() ? 'Usuario' : ''">
+                  <label for="profile-last-name">Apellido</label><input id="profile-last-name" autocomplete="family-name" [value]="demoMode() ? 'Demo' : ''">
+                  <label for="profile-address">Dirección</label><input id="profile-address" autocomplete="street-address" [value]="demoMode() ? 'Dirección de demostración' : ''">
+                  <label for="profile-phone">Teléfono</label><input id="profile-phone" type="tel" autocomplete="tel" [value]="demoMode() ? '+504 0000-0000' : ''">
+                  <label for="profile-mobile">Teléfono móvil</label><input id="profile-mobile" type="tel" autocomplete="tel" [value]="demoMode() ? '+504 0000-0000' : ''">
+                  <label for="profile-email">Correo electrónico</label><input id="profile-email" type="email" autocomplete="email" [value]="demoMode() ? 'demo@example.com' : ''">
+                  <button class="button" type="button" disabled>Guardar</button>
+                </fieldset>
+              </section>
+            } @else if (accountView() === 'establecimientos') {
+              <section class="panel account-panel">
+                <div class="account-panel-heading"><div><span class="eyebrow">Red +PLUS</span><h2>Establecimientos</h2></div></div>
+                <app-original-section [page]="'establecimientos'" />
+              </section>
+            } @else {
+              <section class="panel account-panel">
+                <div class="account-panel-heading"><div><span class="eyebrow">Beneficios</span><h2>Premios</h2></div></div>
+                @if (demoMode()) {
+                  <div class="demo-rewards">
+                    <article><span class="eyebrow">Recompensa demo</span><h3>Café de cortesía</h3><p>Canje de ejemplo · 40 puntos</p></article>
+                    <article><span class="eyebrow">Recompensa demo</span><h3>Beneficio especial</h3><p>Canje de ejemplo · 80 puntos</p></article>
+                  </div>
+                } @else { <div class="account-detail-placeholder"><strong>Catálogo de premios</strong><p>Los premios disponibles se mostrarán cuando se conecte el servicio de cuenta.</p></div> }
+              </section>
+            }
+          </div>
+        </div>
+      } @else {
+        <section class="panel original-login">
           <h2>Por favor, inicia sesión</h2>
           <form id="formdata" [formGroup]="loginForm" (ngSubmit)="login()" [attr.aria-busy]="busy()">
             <fieldset [disabled]="busy()">
@@ -41,9 +140,12 @@
             </fieldset>
           </form>
           @if (!api.ready()) { <p class="notice" role="status">El servicio de acceso todavía no está conectado.</p> }
-        }
-        <p class="form-message" role="status">{{ message() }}</p>
-      </section>
+          <div class="demo-entry">
+            <button class="button light full" type="button" (click)="enterDemo()">Entrar en modo demo</button>
+          </div>
+          <p class="form-message" role="status">{{ message() }}</p>
+        </section>
+      }
     }
     @case ('contacto') {
       <div class="form-layout original-contact"><section class="panel">
