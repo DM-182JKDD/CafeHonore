@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { provideRouter } from '@angular/router';
 import { AppComponent } from './app.component';
+import { AccountSessionService } from './account-session.service';
 
 describe('Navegación y apariencia del portal', () => {
   beforeEach(() => {
@@ -25,5 +26,17 @@ describe('Navegación y apariencia del portal', () => {
     fixture.detectChanges();
     expect(fixture.nativeElement.querySelectorAll('.nav-links a').length).toBe(7);
     expect(fixture.nativeElement.querySelector('.menu-toggle')).toBeNull();
+  });
+
+  it('muestra el nombre de la sesión en la barra superior en vez del enlace de acceso', () => {
+    const session = TestBed.inject(AccountSessionService);
+    session.setAccount({ name: 'Usuario Demo', points: 120 });
+    const fixture = TestBed.createComponent(AppComponent);
+    fixture.detectChanges();
+
+    const topbarLink = fixture.nativeElement.querySelector('.topbar a') as HTMLAnchorElement;
+    expect(topbarLink.textContent?.trim()).toBe('Usuario Demo');
+    expect(topbarLink.getAttribute('aria-label')).toBe('Mi Cuenta: Usuario Demo');
+    expect(fixture.nativeElement.querySelector('.topbar')?.textContent).not.toContain('Iniciar sesión');
   });
 });

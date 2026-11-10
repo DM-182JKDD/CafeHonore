@@ -4,6 +4,8 @@ import { signal } from '@angular/core';
 import { of } from 'rxjs';
 import { vi } from 'vitest';
 import { ApiService } from './api.service';
+import { AccountSessionService } from './account-session.service';
+import { AppComponent } from './app.component';
 import { PageComponent } from './page.component';
 
 describe('Carrusel automático', () => {
@@ -179,5 +181,16 @@ describe('Vistas autenticadas de Mi Cuenta', () => {
     expect(fixture.componentInstance.accountMenuOpen()).toBe(false);
     expect(fixture.nativeElement.querySelector('.account-menu-backdrop')).toBeNull();
     expect(fixture.componentInstance.accountView()).toBe('movimientos');
+  });
+
+  it('refleja el acceso demo en la barra superior', () => {
+    const fixture = TestBed.createComponent(PageComponent);
+    fixture.detectChanges();
+    fixture.componentInstance.enterDemo();
+    fixture.detectChanges();
+
+    const appFixture = TestBed.createComponent(AppComponent);
+    appFixture.detectChanges();
+    expect(appFixture.nativeElement.querySelector('.topbar a')?.textContent?.trim()).toBe('Usuario Demo');
   });
 });

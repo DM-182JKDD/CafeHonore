@@ -1,11 +1,13 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { AccountSessionService } from './account-session.service';
 
 @Component({
   selector: 'app-root', imports: [RouterLink, RouterLinkActive, RouterOutlet],
   templateUrl: './app.component.html'
 })
 export class AppComponent {
+  readonly session = inject(AccountSessionService);
   readonly year = new Date().getFullYear();
   readonly links = [
     { path: 'inicio', label: 'Inicio', icon: 'M3 10.5 12 3l9 7.5V21h-6v-6H9v6H3z' },
