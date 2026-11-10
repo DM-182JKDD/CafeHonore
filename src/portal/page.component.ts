@@ -8,16 +8,6 @@ import { OriginalSectionComponent } from './original-section.component';
 
 type AccountView = 'inicio' | 'movimientos' | 'password' | 'perfil' | 'establecimientos' | 'premios';
 
-interface DemoMovement {
-  code: string;
-  establishment: string;
-  description: string;
-  date: string;
-  charge: number;
-  credit: number;
-  balance: number;
-}
-
 @Component({ selector: 'app-page', imports: [ReactiveFormsModule, OriginalSectionComponent], templateUrl: './page.component.html' })
 export class PageComponent {
   readonly api = inject(ApiService);
@@ -33,15 +23,8 @@ export class PageComponent {
   readonly busy = signal(false);
   readonly message = signal('');
   readonly account = signal<Account | null>(null);
-  readonly demoMode = signal(false);
   readonly accountView = signal<AccountView>('inicio');
   readonly accountMenuOpen = signal(false);
-  readonly demoMovements: readonly DemoMovement[] = [
-    { code: 'DEMO-1042', establishment: 'Café Honoré', description: 'Acumulación de puntos', date: '2026-10-28', charge: 0, credit: 12, balance: 120 },
-    { code: 'DEMO-1038', establishment: 'Flores y Canastas Honoré', description: 'Acumulación de puntos', date: '2026-10-12', charge: 0, credit: 8, balance: 108 },
-    { code: 'DEMO-1021', establishment: 'Marco Aldany', description: 'Canje de beneficio demo', date: '2026-09-30', charge: 20, credit: 0, balance: 100 },
-    { code: 'DEMO-1007', establishment: 'Café Honoré', description: 'Acumulación de puntos', date: '2026-09-14', charge: 0, credit: 20, balance: 120 }
-  ];
   readonly accountNavigation: readonly { id: AccountView; label: string }[] = [
     { id: 'inicio', label: 'Inicio' },
     { id: 'movimientos', label: 'Mis movimientos' },
@@ -98,13 +81,6 @@ export class PageComponent {
   selectSlide(index: number): void { this.slide.set(index); this.resetCarouselControls(); }
   selectAccountView(view: AccountView): void { this.accountView.set(view); this.accountMenuOpen.set(false); this.message.set(''); }
   toggleAccountMenu(): void { this.accountMenuOpen.update(open => !open); }
-  enterDemo(): void {
-    this.account.set({ name: 'Usuario Demo', points: 120 });
-    this.demoMode.set(true);
-    this.accountView.set('inicio');
-    this.accountMenuOpen.set(false);
-    this.message.set('');
-  }
   private resetCarouselControls(): void {
     this.controlsQuiet.set(false);
     if (this.controlsFadeTimer !== undefined) window.clearTimeout(this.controlsFadeTimer);
@@ -122,16 +98,12 @@ export class PageComponent {
       const { username, password } = this.loginForm.getRawValue();
       const result = await this.api.login(username, password);
       if (typeof result.name !== 'string' || typeof result.points !== 'number') throw new Error('Respuesta inválida');
-      this.account.set(result); this.demoMode.set(false); this.accountView.set('inicio'); this.loginForm.reset();
+      this.account.set(result); this.accountView.set('inicio'); this.loginForm.reset();
     } catch (error) { this.message.set(error instanceof HttpErrorResponse && error.status === 401 ? 'Usuario o contraseña incorrectos.' : 'No pudimos iniciar sesión. Inténtalo más tarde.'); }
     finally { this.busy.set(false); }
   }
   async logout(): Promise<void> {
     if (this.busy()) return;
-    if (this.demoMode()) {
-      this.account.set(null); this.demoMode.set(false); this.accountView.set('inicio'); this.accountMenuOpen.set(false); this.message.set('');
-      return;
-    }
     this.busy.set(true); this.message.set('');
     try { await this.api.logout(); this.account.set(null); this.accountView.set('inicio'); this.accountMenuOpen.set(false); }
     catch { this.message.set('No pudimos cerrar la sesión. Inténtalo de nuevo.'); }

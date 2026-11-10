@@ -157,7 +157,6 @@ h1, h2, h3 { color: var(--color-on-surface); line-height: 1.2; letter-spacing: -
 .account-layout { display: grid; grid-template-columns: minmax(210px, .28fr) minmax(0, 1fr); align-items: start; gap: clamp(18px, 3vw, 32px); margin-bottom: 56px; }
 .account-sidebar { position: sticky; top: 20px; padding: 18px; }
 .account-menu-toggle, .account-menu-close, .account-menu-backdrop { display: none; }
-.demo-entry { margin-top: 20px; padding-top: 20px; border-top: 1px solid var(--border-section); }
 .eyebrow { color: var(--color-on-surface-variant); font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; }
 .account-nav { display: grid; gap: 4px; padding-top: 12px; }
 .account-nav-link { min-height: 44px; padding: 10px 12px; border: 0; border-radius: var(--radius-md); background: transparent; color: var(--color-on-surface-variant); font-size: 14px; font-weight: 600; text-align: left; transition: background-color var(--dur-fast), color var(--dur-fast); }
@@ -181,10 +180,6 @@ h1, h2, h3 { color: var(--color-on-surface); line-height: 1.2; letter-spacing: -
 .account-detail-list > div { min-width: 0; padding: 12px; border-radius: var(--radius-md); background: var(--color-surface-raised); }
 .account-detail-list dt { color: var(--color-on-surface-variant); font-size: 12px; font-weight: 600; }
 .account-detail-list dd { margin: 3px 0 0; color: var(--color-on-surface); font-size: 14px; overflow-wrap: anywhere; }
-.demo-rewards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
-.demo-rewards article { padding: 20px; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); background: var(--color-surface); }
-.demo-rewards h3 { margin: 8px 0 4px; font-size: 18px; }
-.demo-rewards p { margin: 0; color: var(--color-on-surface-variant); font-size: 13px; }
 .text-button { padding: 8px 0; border: 0; background: transparent; color: var(--color-primary); font-size: 14px; font-weight: 700; }
 .text-button:hover { text-decoration: underline; }
 .account-table-wrap { width: 100%; overflow-x: auto; border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); }
@@ -316,7 +311,7 @@ input[aria-invalid='true'], textarea[aria-invalid='true'] { border-color: var(--
   .page-heading h1 { font-size: clamp(1.5rem, 7vw, 2.2rem); }
   .panel { padding: 20px; }
   .account-balance { align-items: flex-start; }
-  .account-profile-form, .account-filter, .account-detail-list, .demo-rewards { grid-template-columns: minmax(0, 1fr); }
+  .account-profile-form, .account-filter, .account-detail-list { grid-template-columns: minmax(0, 1fr); }
   .account-filter input, .account-filter .button { width: 100%; }
   .original-content .panel-body { padding: 20px; }
   .original-content .h1 { font-size: 26px; }

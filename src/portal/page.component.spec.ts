@@ -121,48 +121,16 @@ describe('Vistas autenticadas de Mi Cuenta', () => {
     expect(fixture.nativeElement.textContent).toContain('Movimientos recientes');
   });
 
-  it('permite explorar datos ficticios sin API y sale del demo sin llamar al servidor', () => {
+  it('no ofrece acceso de demostración en la pantalla de inicio de sesión', () => {
     const fixture = TestBed.createComponent(PageComponent);
     fixture.detectChanges();
-    fixture.nativeElement.querySelector('.demo-entry button').click();
-    fixture.detectChanges();
-
-    expect(fixture.componentInstance.demoMode()).toBe(true);
-    expect(fixture.nativeElement.textContent).toContain('Usuario Demo');
-    expect(fixture.nativeElement.textContent).toContain('demo@example.com');
-    expect(fixture.nativeElement.textContent).toContain('DEMO-1042');
-    expect(fixture.nativeElement.textContent).toContain('+504 0000-0000');
-    expect(fixture.nativeElement.querySelector('.account-member')).toBeNull();
-    expect(fixture.nativeElement.querySelector('.account-avatar')).toBeNull();
-    expect(fixture.nativeElement.querySelector('.demo-badge')).toBeNull();
-    expect(fixture.nativeElement.querySelector('.demo-notice')).toBeNull();
-
-    const buttons = Array.from(fixture.nativeElement.querySelectorAll('.account-nav-link') as NodeListOf<HTMLButtonElement>);
-    buttons.find(button => button.textContent?.includes('Mis movimientos'))!.click();
-    fixture.detectChanges();
-    expect(fixture.nativeElement.textContent).toContain('DEMO-1007');
-    expect(fixture.nativeElement.textContent).not.toContain('Modo demo');
-
-    buttons.find(button => button.textContent?.includes('Actualizar datos'))!.click();
-    fixture.detectChanges();
-    expect((fixture.nativeElement.querySelector('#profile-phone') as HTMLInputElement).value).toBe('+504 0000-0000');
-    expect((fixture.nativeElement.querySelector('#profile-mobile') as HTMLInputElement).value).toBe('+504 0000-0000');
-
-    buttons.find(button => button.textContent?.includes('Premios'))!.click();
-    fixture.detectChanges();
-    expect(fixture.nativeElement.textContent).toContain('Café de cortesía');
-    expect(fixture.nativeElement.textContent).not.toContain('Modo demostración');
-
-    buttons.find(button => button.textContent?.trim() === 'Cerrar sesión')!.click();
-    fixture.detectChanges();
-    expect(fixture.componentInstance.demoMode()).toBe(false);
-    expect(fixture.nativeElement.querySelector('.demo-entry')).not.toBeNull();
-    expect(apiLogout).not.toHaveBeenCalled();
+    expect(fixture.nativeElement.querySelector('form#formdata')).not.toBeNull();
+    expect(fixture.nativeElement.querySelector('.demo-entry')).toBeNull();
   });
 
   it('colapsa el menú de cuenta y lo cierra al elegir una sección', () => {
     const fixture = TestBed.createComponent(PageComponent);
-    fixture.componentInstance.account.set({ name: 'Usuario Demo', points: 120 });
+    fixture.componentInstance.account.set({ name: 'Miembro de prueba', points: 12 });
     fixture.detectChanges();
 
     expect(fixture.componentInstance.accountMenuOpen()).toBe(false);
